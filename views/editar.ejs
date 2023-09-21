@@ -1,0 +1,61 @@
+<%-include('partials/header')  %>
+<%-include('partials/navbar')  %>
+<style>
+    .input-warning{
+        outline: 1px solid red;
+    }
+    .input-good{
+        outline: 1px solid green;
+    }
+</style>
+<div id="mensajes">
+
+</div>
+
+<form method="post" action="" id="nueva-publicacion"  class="container mx-auto" style="outline: 1px solid black; margin: 30px 0; padding: 10px 20px 30px 20px;">
+    
+    <input type="text" style="display: none;" value="<%= publicacion.id %>" id="id_publicacion" name="id_publicacion">
+    
+    <div class="mb-3 mt-3">
+      <label for="autor" class="form-label">Autor:</label>
+      <input type="text" class="form-control" value="<%= publicacion.autor %>" id="autor" placeholder="Escriba el autor de la publicacion" name="autor">
+      <h6 class="my-2 text-danger" id="error_autor"></h6>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email" class="form-control" value="<%= publicacion.email %>" id="email" placeholder="Escriba un e-mail" name="email">
+        <h6 class="my-2 text-danger" id="error_email"></h6>
+    </div>
+    
+    <div class="mb-3 mt-3">
+        <label for="titulo" class="form-label">Titulo:</label>
+        <input type="text" class="form-control" value="<%= publicacion.titulo %>" id="titulo" placeholder="Escriba un titulo" name="titulo">
+        <h6 class="my-2 text-danger" id="error_titulo"></h6>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="detalle" class="form-label">Detalle:</label>
+        <input type="text" class="form-control" value="<%= publicacion.detalle %>" id="detalle" placeholder="Escriba un detalle" name="detalle" style="height: 50px;">
+        <h6 class="my-2 text-danger" id="error_detalle"></h6>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="url_imagen" class="form-label">URL de la imagen:</label>
+        <input type="text" class="form-control" value="<%= publicacion.url_imagen %>" id="url_imagen" placeholder="Escriba un url publico" name="url_imagen">
+        <h6 class="my-2 text-danger" id="error_url_imagen"></h6>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="fecha" class="form-label">Fecha de la publicacion:</label>
+        <input type="date" class="form-control" value="<%= publicacion.fecha %>" id="fecha" name="fecha">
+        <h6 class="my-2 text-danger" id="error_fecha"></h6>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar publicacion</button>
+</form>
+
+<script src="/js/editar.js"></script>
+
+<%-include('partials/footer')  %>
+

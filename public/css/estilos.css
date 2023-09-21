@@ -1,0 +1,10 @@
+body {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+.input-warning{
+    outline: 1px solid red;
+}
+.input-good{
+    outline: 1px solid green;
+}
